@@ -1,0 +1,96 @@
+/* login and register */
+.auth{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    background-color: #b9e7e7;
+    width: 100vw;
+    height: 100vh;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background-color: white;
+        padding: 30px;
+    }
+    h1{
+        font-size: 20px;
+        color: teal;
+        margin-bottom: 10px;
+    }
+input{
+        padding: 5px 10px;
+        margin:  5px ;
+        border: none;
+        border-bottom: 1px solid gray;
+        width: 250px;
+        height: 25px;
+    }
+    input:active{
+        border: none;
+    }
+    .button-click{
+        width: 100%;
+        padding: 5px 20px;
+        height: 35px;
+        /* margin: 10px ; */
+        color: white;
+        background-color: teal;
+        border: none;
+        cursor: pointer;
+    }
+    .auth-links{
+        text-decoration: none;
+        color: teal;
+    }
+    .error-p{
+        color: rgb(190, 14, 14);
+    }
+    /* navbar */
+   .navbar .container{
+        display: flex;
+        justify-content: space-between;
+        margin: 0 10px;
+        
+    }
+    .links{
+        display: flex;
+        align-items: center;
+        gap:10px;
+       
+    }
+    .link ,span{
+        text-decoration: none;
+        color: teal;
+    }
+    .write{
+        background-color: #b9e7e7;
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid gainsboro;
+    }
+    .write:hover{
+        background-color: white;
+        color: teal;
+        
+    }
+    /* footer */
+    footer{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #b9e7e7;
+        padding: 20px;
+        margin-top: 20px;
+    }
+
