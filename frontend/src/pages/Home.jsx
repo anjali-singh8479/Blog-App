@@ -37,7 +37,7 @@ const Home = () => {
               <img src={post.img} alt=""></img>
             </div>
             <div className="content">
-              <Link>
+              <Link to="/single">
                 <h1 className="title">{post.title}</h1>
               </Link>
               <p>

@@ -1,157 +1,339 @@
 /* login and register */
-.auth{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
-    background-color: #b9e7e7;
-    width: 100vw;
-    height: 100vh;
-    }
-    form{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        background-color: white;
-        padding: 30px;
-    }
-    h1{
-        font-size: 20px;
-        color: teal;
-        margin-bottom: 10px;
-    }
-input{
-        padding: 5px 10px;
-        margin:  5px ;
-        border: none;
-        border-bottom: 1px solid gray;
-        width: 250px;
-        height: 25px;
-    }
-    input:active{
-        border: none;
-    }
-    .button-click{
-        width: 100%;
-        padding: 5px 20px;
-        height: 35px;
-        /* margin: 10px ; */
-        color: white;
-        background-color: teal;
-        border: none;
-        cursor: pointer;
-    }
-    .auth-links{
-        text-decoration: none;
-        color: teal;
-    }
-    .error-p{
-        color: rgb(190, 14, 14);
-    }
-    /* navbar */
-   .navbar .container{
-        display: flex;
-        justify-content: space-between;
-        margin: 0 10px;
-        
-    }
-    .links{
-        display: flex;
-        align-items: center;
-        gap:10px;
-       
-    }
-    .link ,span{
-        text-decoration: none;
-        color: teal;
-    }
-    .write{
-        background-color: #b9e7e7;
-        color: white;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid gainsboro;
-    }
-    .write:hover{
-        background-color: white;
-        color: teal;
-        
-    }
-    /* footer */
-    footer{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background-color: #b9e7e7;
-        padding: 20px;
-        margin-top: 20px;
-    }
+.auth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  background-color: #b9e7e7;
+  width: 100vw;
+  height: 100vh;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: white;
+  padding: 30px;
+}
+h1 {
+  font-size: 20px;
+  color: teal;
+  margin-bottom: 10px;
+}
+input {
+  padding: 5px 10px;
+  margin: 5px;
+  border: none;
+  border-bottom: 1px solid gray;
+  width: 250px;
+  height: 25px;
+}
+input:active {
+  border: none;
+}
+.button-click {
+  width: 100%;
+  padding: 5px 20px;
+  height: 35px;
+  /* margin: 10px ; */
+  color: white;
+  background-color: teal;
+  border: none;
+  cursor: pointer;
+}
+.auth-links {
+  text-decoration: none;
+  color: teal;
+}
+.error-p {
+  color: rgb(190, 14, 14);
+}
+/* navbar */
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10px;
+}
+.links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.link,
+span {
+  text-decoration: none;
+  color: teal;
+}
+.write {
+  background-color: #b9e7e7;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid gainsboro;
+}
+.write:hover {
+  background-color: white;
+  color: teal;
+}
+/* footer */
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #b9e7e7;
+  padding: 20px;
+  margin-top: 20px;
+}
 /* home */
-.posts{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 100px;
-    padding: 20px 100px;
+.posts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  padding: 20px 100px;
 }
-.post{
-    display:flex;
-    align-items: center;
+.post {
+  display: flex;
+  align-items: center;
 }
-.post:nth-child(2n+1){
-    display: flex;
-flex-direction: row-reverse;
+.post:nth-child(2n + 1) {
+  display: flex;
+  flex-direction: row-reverse;
 }
-.img{
-    flex:2;
-    position: relative;
+.img {
+  flex: 2;
+  position: relative;
 }
-.img::after{
-    content: "";
-    width: 100%;
-    height: 100%;
-    background-color: #b9e7e7;
-    top:10px;
-    left: -10px;
-    position: absolute;
-    z-index: -1;
+.img::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #b9e7e7;
+  top: 10px;
+  left: -10px;
+  position: absolute;
+  z-index: -1;
 }
-img{
-    width: 100%;
-    max-height: 400px;
+img {
+  width: 100%;
+  max-height: 400px;
 }
-.content{
-    display: flex;
-    flex-direction: column;
-    flex:2;
-    margin-left: 50px;
-    padding: 0 40px;
-    /* align-items: center; */
-    justify-content: space-around;
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+  margin-left: 50px;
+  padding: 0 40px;
+  /* align-items: center; */
+  /* justify-content: space-around; */
 }
-h1{
-    font-size: 28px;
-    text-decoration: none;
+h1 {
+  font-size: 28px;
+  text-decoration: none;
 }
-.button-readmore{
-    width: max-content;
-    height: max-content;
-    border: 1px solid teal;
-    padding: 5px 20px;
-    color: teal;
-    font-weight: 300;
-    background-color: white;
-    cursor: pointer;
+.button-readmore {
+  width: max-content;
+  height: max-content;
+  border: 1px solid teal;
+  padding: 5px 20px;
+  color: teal;
+  font-weight: 300;
+  background-color: white;
+  cursor: pointer;
 }
-.button-readmore:hover{
-    background-color: teal;
-    color: white;
+.button-readmore:hover {
+  background-color: teal;
+  color: white;
+}
+
+/* single */
+.single {
+  display: flex;
+  gap: 50px;
+  padding: 30px;
+  padding-right: 100px;
+}
+.content {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.content img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+.user img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+span {
+  font-weight: bold;
+}
+
+.edit {
+  display: flex;
+  gap: 5px;
+}
+
+.edit img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.user-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+h1 {
+  font-size: 42px;
+  color: #333;
+}
+
+p {
+  text-align: justify;
+  line-height: 30px;
+}
+.menu {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.menu h1 {
+  font-size: 20px;
+  color: #555;
+}
+
+.single-post {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.single-post img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.single-post h2 {
+  color: #555;
+}
+
+.single-post button {
+  width: max-content;
+  padding: 7.5px 15px;
+  border: none;
+  cursor: pointer;
+  color: teal;
+  background-color: white;
+  border: 1px solid teal;
+}
+.single-post button :hover {
+  border: 1px solid white;
+  background-color: #b9e7e7;
+  color: black;
+}
+/* write */
+.add {
+    margin: 0 50px;
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+ 
+}
+.add .content {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.add .content input {
+  padding: 10px;
+  border: 1px solid lightgray;
+}
+
+.editorContainer {
+  height: 300px;
+  overflow: scroll;
+  border: 1px solid lightgray;
+}
+.editorContainer .editor {
+  height: 100%;
+  border: none;
+}
+
+.menu {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  line-height: 20px;
+}
+.menu .item {
+  border: 1px solid lightgray;
+  padding: 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #555;
+}
+.item h1 {
+  font-size: 20px;
+}
+
+.item .file {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.buttons #save-draft{
+  cursor: pointer;
+  color: teal;
+  background-color: white;
+  border: 1px solid teal;
+  padding: 3px 5px;
+}
+.buttons #publish {
+  cursor: pointer;
+  color: white;
+  background-color: teal;
+  border: 1px solid teal;
+  padding: 3px 5px;
+}
+ .cat {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  /* gap: 2px; */
+  /* padding-right: 200px; */
+  color: teal;
 }
