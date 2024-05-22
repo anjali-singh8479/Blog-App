@@ -1,7 +1,18 @@
+import axios from 'axios'
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
+    const navigate=useNavigate()
+    const handlelogout=()=>{
+        try{
+     const res=axios.get("http://localhost:8800/auth/logout")
+     console.log(res)
+navigate("/login")
+        }catch(err){
+            return err
+        }
+    }
   return (
 <>
 <div className='navbar'>
@@ -23,7 +34,7 @@ const Navbar = () => {
         <div> Technology</div>
         </Link>
         <span>Anjali</span>
-        <span>Logout</span>
+        <span onClick={handlelogout} style={{cursor:'pointer'}}>Logout</span>
         <span className='write'>
             <Link to="/write" className='link '>write</Link>
         </span>
