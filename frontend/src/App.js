@@ -20,13 +20,19 @@ const router=createBrowserRouter([{
   path:"/",
   element:<Layout></Layout>,
   children:[
-  {path:"/",
+  {path:"/home",
     element:<Home></Home>
   },
-  {path:"/single",
+  {path:`/?cat=art`,
+    element:<Home></Home>
+  },
+  {path:"/single/:id",
     element:<Single></Single>
   },
   {path:"/write",
+    element:<Write></Write>
+  },
+  {path:"/write/:id",
     element:<Write></Write>
   }
   ]

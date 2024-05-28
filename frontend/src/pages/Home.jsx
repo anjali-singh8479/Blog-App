@@ -1,52 +1,45 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Home = () => {
-  const posts = [
-    {
-      id: 1,
-      img: "https://images4.alphacoders.com/271/271158.jpg",
-      title: "post",
-      content: "this is the content",
-    },
-    {
-      id: 2,
-      img: "https://images4.alphacoders.com/271/271158.jpg",
-      title: "post",
-      content: "this is the content",
-    },
-    {
-      id: 2,
-      img: "https://images4.alphacoders.com/271/271158.jpg",
-      title: "post",
-      content: "this is the content",
-    },
-    {
-      id: 2,
-      img: "https://images4.alphacoders.com/271/271158.jpg",
-      title: "post",
-      content: "this is the content",
-    },
-  ];
+    const category=useLocation().search.slice(5)
+    console.log(category)
+    const[posts,setposts]=useState([])
+  useEffect(()=>{
+    
+    const posts=async()=>{
+        
+        try{
+            const res=await axios.get(`http://localhost:8800/post/all`)
+            console.log(res.data)
+            setposts(res.data)
+        }catch(err){
+            return err
+        }
+    }
+    posts();
+  },[])
+  const gettext=(html)=>{
+    const doc=new DOMParser().parseFromString(html,"text/html")
+    return doc.body.textContent;
+  }
   return (
     <>
       <div className="posts">
         {posts.map((post) => (
           <div className="post" key={post.id}>
             <div className="img">
-              <img src={post.img} alt=""></img>
+              <img src={`http://localhost:8800/uploads/${post.img}`} alt=""></img>
             </div>
             <div className="content">
               <Link to="/single">
-                <h1 className="title">{post.title}</h1>
+                <h2 className="title">{post.title}</h2>
               </Link>
               <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Voluptate, doloribus? Odio, vel vitae? Consectetur vel ratione
-                asperiores earum minima excepturi praesentium, sint adipisci
-                laborum non dolor ducimus. Necessitatibus, doloribus reiciendis.
+              {gettext(post.desc)}
               </p>
-              <buttona className="button-readmore">Read More</buttona>
+              <button className="button-readmore"><Link to={`/single/${post.id}`} className=" button-links">Read More</Link></button>
             </div>
           </div>
         ))}

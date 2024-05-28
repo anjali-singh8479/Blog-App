@@ -6,11 +6,10 @@ const Login = () => {
   const navigate = useNavigate();
 
   const [error, seterror] = useState("");
-  const [dat, setdata] = useState({
+  const [data, setdata] = useState({
     username: "",
     password: "",
   });
-  const { currentuser } = useContext(AuthContext);
   const { login } = useContext(AuthContext);
   const handlechange = (e) => {
     setdata((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -19,12 +18,14 @@ const Login = () => {
   const handleclick = async (e) => {
     e.preventDefault();
     try {
-      //   const res = await axios.post("http://localhost:8800/auth/login", dat);
-      const res = await login(dat);
-      console.log(res);
-      navigate("/");
-      seterror(res.data);
-      console.log(res.data);
+      //   const res = await axios.post("http://localhost:8800/auth/login", data);
+      const res = await login(data);
+    //   seterror(res.data);
+    if(res.data.message==="logged in")
+      navigate("/home");
+      else{
+        seterror(res.data)
+      }
     } catch (err) {
       return err;
     }

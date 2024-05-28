@@ -1,17 +1,31 @@
 import axios from "axios";
-import React, { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/authContext";
 
 const Navbar = () => {
+  const [posts, setposts] = useState([]);
+  const category = useLocation().search.substring(5);
   const navigate = useNavigate();
-  const {currentuser}=useContext(AuthContext)
-  const {logout}=useContext(AuthContext)
+  const { currentuser } = useContext(AuthContext);
+  const { logout } = useContext(AuthContext);
+
+  const handlecategory = async () => {
+    try {
+      const res = await axios.get(
+        `http://localhost:8800/post/all/?${category}`
+      );
+      setposts(res.data);
+      console.log(res.data);
+    } catch (err) {
+      return err;
+    }
+  };
   const handlelogout = async () => {
     try {
-    //   const res = await axios.get("http://localhost:8800/auth/logout");
-    const res=logout()
-    console.log(res);
+      //   const res = await axios.get("http://localhost:8800/auth/logout");
+      const res = await logout();
+      console.log(res);
       navigate("/login");
     } catch (err) {
       return err;
@@ -25,8 +39,8 @@ const Navbar = () => {
             <img src="" alt=""></img>
           </div>
           <div className="links">
-            <Link to="/?cat=Art" className="link">
-              <div> Art</div>
+            <Link to="/?cat=art" className="link">
+              <div onClick={handlecategory}> Art</div>
             </Link>
             <Link to="/?cat=science" className="link">
               <div> Science</div>
@@ -34,7 +48,7 @@ const Navbar = () => {
             <Link to="/?cat=literature" className="link">
               <div> Literature</div>
             </Link>
-            <Link to="/cat=technology" className="link">
+            <Link to="/?cat=technology" className="link">
               <div> Technology</div>
             </Link>
             <span>{currentuser.username}</span>

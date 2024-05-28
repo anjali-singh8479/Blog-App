@@ -6,11 +6,24 @@ import cookieParser from "cookie-parser";
 import cors from "cors"
 const app=express();
 app.use(express.json())
-app.use(cors())
+app.use((req,res,next)=>{
+    res.header("Access-Control-Allow-Creditionals",true)
+    next()
+})
+app.use(cors(
+    {
+        origin:["http://localhost:3000"],
+    methods:["POST","GET","PUT","DELETE"],
+    credentials:true
+    }
+))
+app.use(express.static("public"))
+app.use(cookieParser())
+app.use("/post",postRoutes)
+
 app.use("/auth",authRoutes)
 app.use("/user",userRoutes)
-app.use("/post",postRoutes)
-app.use(cookieParser())
+
 app.listen("8800",()=>{
     console.log("backend connected");
 })

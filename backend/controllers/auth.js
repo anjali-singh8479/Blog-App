@@ -1,7 +1,6 @@
 import db from "../connect.js";
 import bcrypt from "bcrypt"
 import jwt from "jsonwebtoken"
-
 export const register=(req,res)=>{
     const q1="select * from users where email=? OR username=?"
     db.query(q1,[req.body.email,req.body.username],(err,data)=>{
@@ -13,8 +12,9 @@ export const register=(req,res)=>{
         bcrypt.hash(req.body.password,salt,(err,hash)=>{
             if(err)
                 return res.json(err).status(500)
-        const q="INSERT INTO users(`username`,`email`,`password`,`img`) VALUES(?)"
-        const values=[req.body.username,req.body.email,hash,req.body.img]
+        const q="INSERT INTO users(`username`,`email`,`img`,`password`) VALUES(?)"
+        console.log(q)
+        const values=[req.body.username,req.body.email,req.file.filename,hash]
         db.query(q,[values],(err,data)=>{
        if(err)
         return res.json(err).status(400)
@@ -38,9 +38,10 @@ export const login=(req,res)=>{
             if(!response)
                 return res.json("Incorrect password").status(401)
             const token=jwt.sign(data[0].id,"secret-key")
+            console.log("token",token)
             const{password,...others}=data[0]
             res.cookie("token",token)
-            return res.json({others,"message":"Logged In"}).status(200)
+            return res.json({...others,"message":"logged in"}).status(200)
         })
     })
 }

@@ -98,7 +98,7 @@ footer {
   align-items: center;
   justify-content: center;
   gap: 100px;
-  padding: 20px 100px;
+  padding: 20px 80px;
 }
 .post {
   display: flex;
@@ -111,10 +111,12 @@ footer {
 .img {
   flex: 2;
   position: relative;
+  width: 100%;
+  height: 100%;
 }
 .img::after {
   content: "";
-  width: 100%;
+  width: 500px;
   height: 100%;
   background-color: #b9e7e7;
   top: 10px;
@@ -123,7 +125,7 @@ footer {
   z-index: -1;
 }
 img {
-  width: 100%;
+  width: 500px;
   max-height: 400px;
 }
 .content {
@@ -159,18 +161,23 @@ h1 {
   display: flex;
   gap: 50px;
   padding: 30px;
-  padding-right: 100px;
+  align-items: flex-start;
+  justify-content: center;
+  /* padding-right: 100px; */
 }
 .content {
-  flex: 5;
+  flex: 4;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 25px;
+  margin-top: 20px;
+  height: 100%;
+  width: 100%;
 }
 .content img {
   width: 100%;
-  height: 300px;
-  object-fit: cover;
+  height: 100%;
+  object-fit:cover;
 }
 
 .user {
@@ -180,8 +187,8 @@ h1 {
   font-size: 14px;
 }
 .user img {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -227,12 +234,13 @@ p {
 
 .single-post {
   display: flex;
+  width:140px;
   flex-direction: column;
   gap: 10px;
 }
 .single-post img {
   width: 100%;
-  height: 200px;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -248,11 +256,23 @@ p {
   color: teal;
   background-color: white;
   border: 1px solid teal;
+  text-decoration: none;
 }
-.single-post button :hover {
+
+/* .single-post button :hover {
   border: 1px solid white;
   background-color: #b9e7e7;
   color: black;
+} */
+.button-links{
+    color: teal;
+    text-decoration: none;
+    background-color: transparent;
+
+}
+.button-links:hover{
+    color: white;
+    background-color: teal;
 }
 /* write */
 .add {
